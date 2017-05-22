@@ -53,9 +53,8 @@ class Login extends Component {
                         </h1>
 
                     </div>
-                    <h3>Welcome to IN+</h3>
-                    <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.</p>
-                    <p>Login in. To see it in action.</p>
+                    <h2>CYON</h2>
+                    <p>Please login into your account.</p>
                     <form className="m-t" role="form" onSubmit={this.login.bind(this)}>
                         <div className="form-group">
                             <input type="text" className="form-control" placeholder="Username" required="" 
@@ -68,7 +67,6 @@ class Login extends Component {
                             onChange={(event) => this.setState({ password: event.target.value })} />
                         </div>
                         <button type="submit" className="btn btn-primary block full-width m-b">Login</button>
-
                         <a href="#"><small>Forgot password?</small></a>
                     </form>
                     <p className="m-t"> <small>CYON, St Alphonsus Catholic Church, Akute &copy; 2017</small> </p>
