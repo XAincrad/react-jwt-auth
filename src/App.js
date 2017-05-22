@@ -8,7 +8,6 @@ import AuthService from './util/AuthService'
 import Dashboard from './dashboard/dashboard';
 import Login from './login/login';
 import Home from './pages/home/home';
-import Profile from './pages/profile/profile';
 
 const auth = new AuthService();
 
@@ -27,7 +26,6 @@ class App extends Component {
             <Route path="login" component={() => (<Login auth={auth}/>)} />
             <Route component={Dashboard} auth={auth} onEnter={requireAuth}>
               <Route path="home" component={Home} />
-              <Route path="profile" component={Profile} />
             </Route>
           </Route>
       </Router>
