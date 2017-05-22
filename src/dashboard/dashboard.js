@@ -4,6 +4,7 @@ import './dashboard.css';
 //import other classes...
 import Header from './pages/shared/header/header';
 import Sidemenu from './pages/shared/sidemenu/sidemenu';
+import Footer from './pages/shared/footer/footer';
 
 class Dashboard extends Component {
     render() {
@@ -14,9 +15,7 @@ class Dashboard extends Component {
                     <Sidemenu auth={this.props.route.auth}/>
                     <div className="row">
                         <div className="col-lg-12">
-                            <div className="wrapper wrapper-content">
-                                {this.props.children}
-                            </div>
+                            {this.props.children}
                             <Footer/>
                         </div>
                     </div>
