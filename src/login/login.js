@@ -40,18 +40,16 @@ class Login extends Component {
         if (loading) {
             button = <Loader color="#26A65B" size="20px" margin="4px" />;
         } else {
-            button = <button type="submit" className="btn btn-success btn-block">Login</button>;
+            button = <button type="submit" className="btn btn-primary block full-width m-b">Login</button>
         }
 
         return (
             <div className="middle-box text-center loginscreen animated fadeInDown">
                 <div>
                     <div>
-
                         <h1 className="logo-name">
                             <img src="assets/images/cyonLogoTrans.png" alt="" />
                         </h1>
-
                     </div>
                     <h2>CYON</h2>
                     <p>Please login into your account.</p>
@@ -66,7 +64,7 @@ class Login extends Component {
                             value={this.state.password}
                             onChange={(event) => this.setState({ password: event.target.value })} />
                         </div>
-                        <button type="submit" className="btn btn-primary block full-width m-b">Login</button>
+                        {button}
                         <a href="#"><small>Forgot password?</small></a>
                     </form>
                     <p className="m-t"> <small>CYON, St Alphonsus Catholic Church, Akute &copy; 2017</small> </p>
