@@ -38,45 +38,42 @@ class Login extends Component {
 
         let button = null;
         if (loading) {
-            button = <Loader color="#26A65B" size="20px" margin="4px"/>;
+            button = <Loader color="#26A65B" size="20px" margin="4px" />;
         } else {
             button = <button type="submit" className="btn btn-success btn-block">Login</button>;
         }
 
         return (
-            <main className="page-login page-content">
-                <div className="page-inner">
-                    <div id="main-wrapper">
-                        <div className="row">
-                            <div className="col-md-3 center">
-                                <div className="login-box">
-                                    <a href="index-2.html" className="logo-name text-lg text-center">
-                                        <img src="assets/images/cyonLogoTrans.png" alt="" />
-                                    </a>
-                                    <br/>
-                                    <h1 className="center"><b>CYON</b></h1>
-                                    <p className="text-center m-t-md">Please login into your account.</p>
-                                    <form className="m-t-md" onSubmit={this.login.bind(this)}>
-                                        <div className="form-group">
-                                            <input type="text" className="form-control" placeholder="Username" required
-                                                value={this.state.username}
-                                                onChange={(event) => this.setState({ username: event.target.value })} />
-                                        </div>
-                                        <div className="form-group">
-                                            <input type="password" className="form-control" placeholder="Password" required
-                                                value={this.state.password}
-                                                onChange={(event) => this.setState({ password: event.target.value })} />
-                                        </div>
-                                        {button}
-                                        <a href="forgot.html" className="display-block text-center m-t-md text-sm">Forgot Password?</a>
-                                    </form>
-                                    <p className="text-center m-t-xs text-sm">CYON, St Alphonsus Catholic Church, Akute &copy; 2017</p>
-                                </div>
-                            </div>
-                        </div>
+            <div className="middle-box text-center loginscreen animated fadeInDown">
+                <div>
+                    <div>
+
+                        <h1 className="logo-name">
+                            <img src="assets/images/cyonLogoTrans.png" alt="" />
+                        </h1>
+
                     </div>
+                    <h3>Welcome to IN+</h3>
+                    <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.</p>
+                    <p>Login in. To see it in action.</p>
+                    <form className="m-t" role="form" onSubmit={this.login.bind(this)}>
+                        <div className="form-group">
+                            <input type="text" className="form-control" placeholder="Username" required="" 
+                            value={this.state.username}
+                            onChange={(event) => this.setState({ username: event.target.value })}/>
+                        </div>
+                        <div className="form-group">
+                            <input type="password" className="form-control" placeholder="Password" required=""
+                            value={this.state.password}
+                            onChange={(event) => this.setState({ password: event.target.value })} />
+                        </div>
+                        <button type="submit" className="btn btn-primary block full-width m-b">Login</button>
+
+                        <a href="#"><small>Forgot password?</small></a>
+                    </form>
+                    <p className="m-t"> <small>CYON, St Alphonsus Catholic Church, Akute &copy; 2017</small> </p>
                 </div>
-            </main>
+            </div>
         );
     }
 
