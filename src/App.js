@@ -5,7 +5,7 @@ import './App.css';
 import AuthService from './util/AuthService'
 
 //import page components...
-import Dashboard from './pages/dashboard/dashboard';
+import Dashboard from './dashboard/dashboard';
 import Login from './login/login';
 import Home from './pages/home/home';
 import Profile from './pages/profile/profile';
