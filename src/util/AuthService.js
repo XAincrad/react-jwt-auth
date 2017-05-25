@@ -20,14 +20,15 @@ export default class AuthService extends EventEmitter {
         login(username, password).then(function (result) {
             if (result.status === 'error') {
                 //error occured...return...
-                notifyError('Failed', result.message);
+                //notifyError('Failed', result.message);
                 return false;
             }
             else {
                 this.setToken(result.token);
                 this.setProfile(result.profile);
-                browserHistory.replace('/home');
-                notifySuccess('Welcome', 'CYON Admin Application');
+                //browserHistory.replace('/home');
+                browserHistory.push('/home');
+                //notifySuccess('Welcome', 'CYON Admin Application');
             }
         }.bind(this));
 
@@ -67,6 +68,7 @@ export default class AuthService extends EventEmitter {
         // Clear user token and profile data from localStorage
         localStorage.removeItem('access_token');
         localStorage.removeItem('profile');
-        browserHistory.replace('/');
+        //browserHistory.replace('/');
+        browserHistory.push('/');
     }
 }

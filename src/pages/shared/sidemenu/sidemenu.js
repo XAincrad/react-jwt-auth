@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './sidemmenu.css';
+import './sidemenu.css';
 
 class Sidemenu extends Component {
 
@@ -13,67 +13,53 @@ class Sidemenu extends Component {
     }
 
     render() {
-        return (
-            <nav className="navbar-default navbar-static-side" role="navigation">
-                <div className="sidebar-collapse">
-                    <ul className="nav metismenu" id="side-menu">
-                        <li className="nav-header center">
-                            <div className="dropdown profile-element"> 
-                                <span><img alt="image" className="img-circle" src="img/profile_small.jpg" /></span>
-                                <a data-toggle="dropdown" className="dropdown-toggle" href="#">
-                                    <span className="clear"> <span className="block m-t-xs"> <strong className="font-bold">David Williams</strong>
-                                    </span> <span className="text-muted text-xs block">Art Director <b className="caret"></b></span> </span> </a>
-                                <ul className="dropdown-menu animated fadeInRight m-t-xs">
-                                    <li><a href="profile.html">Profile</a></li>
-                                    <li><a href="contacts.html">Contacts</a></li>
-                                    <li><a href="mailbox.html">Mailbox</a></li>
-                                    <li className="divider"></li>
-                                    <li><a href="login.html">Logout</a></li>
-                                </ul>
-                            </div>
-                            <div className="logo-element">IN+</div>
-                        </li>
-                        <li className="active">
-                            <a href="index-2.html"><i className="fa fa-th-large"></i> <span className="nav-label">Dashboard</span></a>
-                        </li>
-                        <li>
-                            <a href="layouts.html"><i className="fa fa-diamond"></i> <span className="nav-label">Profile</span></a>
-                        </li>
-                        <li>
-                            <a href="mailbox.html"><i className="fa fa-envelope"></i> <span className="nav-label">Mailbox </span><span className="label label-warning pull-right">16/24</span></a>
-                            <ul className="nav nav-second-level collapse">
-                                <li><a href="mailbox.html">Inbox</a></li>
-                                <li><a href="mail_detail.html">Email view</a></li>
-                                <li><a href="mail_compose.html">Compose email</a></li>
-                                <li><a href="email_template.html">Email templates</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="metrics.html"><i className="fa fa-pie-chart"></i> <span className="nav-label">Minutes</span>  </a>
-                        </li>
-                        <li>
-                            <a href="#"><i className="fa fa-edit"></i> <span className="nav-label">Coordinators</span><span className="fa arrow"></span></a>
-                            <ul className="nav nav-second-level collapse">
-                                <li><a href="form_basic.html">Members</a></li>
-                                <li><a href="form_advanced.html">Executives</a></li>
-                                <li><a href="form_wizard.html">Wizard</a></li>
-                                <li><a href="form_file_upload.html">Patrons</a></li>
-                                <li><a href="form_editors.html">Priests</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="grid_options.html"><i className="fa fa-laptop"></i> <span className="nav-label">Finance</span></a>
-                        </li>
-                        <li>
-                            <a href="grid_options.html"><i className="fa fa-laptop"></i> <span className="nav-label">Reports</span></a>
-                        </li>
-                        <li>
-                            <a onClick={this.logout}><i className="fa fa-laptop"></i> <span className="nav-label">Logout</span></a>
-                        </li>
-                    </ul>
+        let sidebar = null;
+        if (!this.props.menuVisible) {
+            sidebar = 'page-sidebar sidebar'
+        } else {
+            sidebar = 'page-sidebar sidebar visible'
+        }
 
+        return (
+            <div className={sidebar}>
+                <div className="page-sidebar-inner slimscroll">
+                    <div className="sidebar-header">
+                        <div className="sidebar-profile">
+                            <a href="javascript:void(0);" id="profile-menu-link">
+                                <div className="sidebar-profile-image">
+                                    <img src="assets/images/profile-menu-image.png" className="img-circle img-responsive" alt=""/>
+                                </div>
+                                <div className="sidebar-profile-details">
+                                    <span>David Green<br/><small>Art Director</small></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <ul className="menu accordion-menu">
+                        <li className="active"><a href="index-2.html" className="waves-effect waves-button"><span className="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
+                        <li><a href="profile.html" className="waves-effect waves-button"><span className="menu-icon glyphicon glyphicon-user"></span><p>Profile</p></a></li>
+                        <li className="droplink"><a href="#" className="waves-effect waves-button"><span className="menu-icon glyphicon glyphicon-envelope"></span><p>Mailbox</p><span className="arrow"></span></a>
+                            <ul className="sub-menu">
+                                <li><a href="inbox.html">Inbox</a></li>
+                                <li><a href="message-view.html">View Message</a></li>
+                                <li><a href="compose.html">Compose</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="profile.html" className="waves-effect waves-button"><span className="menu-icon glyphicon glyphicon-user"></span><p>Minutes</p></a></li>
+                        <li className="droplink"><a href="#" className="waves-effect waves-button"><span className="menu-icon glyphicon glyphicon-th"></span><p>Coordinators</p><span className="arrow"></span></a>
+                            <ul className="sub-menu">
+                                <li><a href="layout-blank.html">Members</a></li>
+                                <li><a href="layout-boxed.html">Executives</a></li>
+                                <li><a href="layout-horizontal-menu.html">Patrons</a></li>
+                                <li><a href="layout-horizontal-menu-boxed.html">Priests</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="profile.html" className="waves-effect waves-button"><span className="menu-icon glyphicon glyphicon-user"></span><p>Finance</p></a></li>
+                        <li><a href="profile.html" className="waves-effect waves-button"><span className="menu-icon glyphicon glyphicon-user"></span><p>Reports</p></a></li>
+                        <li><a href="/login" onClick={this.logout} className="waves-effect waves-button"><span className="menu-icon glyphicon glyphicon-user"></span><p>Logout</p></a></li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
         );
     }
 

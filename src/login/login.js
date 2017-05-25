@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './login.css';
 
-var Loader = require('halogen/ClipLoader');
+var Loading = require('halogen/ClipLoader');
 
 class Login extends Component {
 
@@ -38,7 +38,7 @@ class Login extends Component {
 
         let button = null;
         if (loading) {
-            button = <Loader color="#26A65B" size="20px" margin="4px" />;
+            button = <Loading color="#26A65B" size="20px" margin="4px" />;
         } else {
             button = <button type="submit" className="btn btn-primary block full-width m-b">Login</button>
         }
@@ -53,7 +53,7 @@ class Login extends Component {
                     </div>
                     <h2>CYON</h2>
                     <p>Please login into your account.</p>
-                    <form className="m-t" role="form" onSubmit={this.login.bind(this)}>
+                    <form className="m-t" onSubmit={this.login.bind(this)}>
                         <div className="form-group">
                             <input type="text" className="form-control" placeholder="Username" required="" 
                             value={this.state.username}
@@ -65,7 +65,7 @@ class Login extends Component {
                             onChange={(event) => this.setState({ password: event.target.value })} />
                         </div>
                         {button}
-                        <a href="#"><small>Forgot password?</small></a>
+                        <a href="/forgotpassword"><small>Forgot password?</small></a>
                     </form>
                     <p className="m-t"> <small>CYON, St Alphonsus Catholic Church, Akute &copy; 2017</small> </p>
                 </div>

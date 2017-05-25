@@ -5,10 +5,8 @@ class Footer extends Component {
 
     render() {
         return (
-            <div className="footer fixed">
-                <div className="center">
-                    <strong>Copyright</strong> CYON, St Alphonsus, Akute (Aincrad)
-                </div>
+            <div className="page-footer center bg-light">
+                <p className="no-s"><strong>CYON</strong> St Alphonsus, Akute &copy; 2017-2018</p>
             </div>
         );
     }
